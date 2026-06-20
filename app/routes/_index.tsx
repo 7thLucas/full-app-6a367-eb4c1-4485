@@ -9,23 +9,27 @@ type Board = Cell[];
 
 // ─── Win detection ────────────────────────────────────────────────────────────
 
-// 2×2 board — win = 2 in a row (row / col / diagonal)
+// 4×4 board — win = 4 in a row (row / col / diagonal)
 const WIN_LINES = [
   // rows
-  [0, 1],
-  [2, 3],
+  [0, 1, 2, 3],
+  [4, 5, 6, 7],
+  [8, 9, 10, 11],
+  [12, 13, 14, 15],
   // cols
-  [0, 2],
-  [1, 3],
+  [0, 4, 8, 12],
+  [1, 5, 9, 13],
+  [2, 6, 10, 14],
+  [3, 7, 11, 15],
   // diagonals
-  [0, 3],
-  [1, 2],
+  [0, 5, 10, 15],
+  [3, 6, 9, 12],
 ] as const;
 
 function checkWinner(board: Board): { winner: Player; line: number[] } | null {
-  for (const [a, b] of WIN_LINES) {
-    if (board[a] && board[a] === board[b]) {
-      return { winner: board[a] as Player, line: [a, b] };
+  for (const [a, b, c, d] of WIN_LINES) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d]) {
+      return { winner: board[a] as Player, line: [a, b, c, d] };
     }
   }
   return null;
@@ -209,7 +213,7 @@ function ScorePill({
 export default function IndexPage() {
   const { config, loading } = useConfigurables();
 
-  const [board, setBoard] = useState<Board>(Array(4).fill(null));
+  const [board, setBoard] = useState<Board>(Array(16).fill(null));
   const [current, setCurrent] = useState<Player>("X");
   const [scores, setScores] = useState<Scores>({ X: 0, O: 0, draw: 0 });
 
@@ -239,7 +243,7 @@ export default function IndexPage() {
   );
 
   const resetGame = useCallback(() => {
-    setBoard(Array(4).fill(null));
+    setBoard(Array(16).fill(null));
     setCurrent("X");
   }, []);
 
@@ -308,7 +312,7 @@ export default function IndexPage() {
       {/* Board */}
       <div
         className="grid gap-3 w-full"
-        style={{ maxWidth: "min(90vw, 240px)", gridTemplateColumns: "repeat(2, 1fr)" }}
+        style={{ maxWidth: "min(90vw, 480px)", gridTemplateColumns: "repeat(4, 1fr)" }}
       >
         {board.map((cell, idx) => (
           <GameCell
