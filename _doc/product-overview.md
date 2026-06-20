@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 ## Product
-Simple browser-based 3×3 Tic Tac Toe game for two players on one device. No downloads, no accounts, no setup — open and play.
+Simple browser-based 5×5 Tic Tac Toe game for two players on one device. No downloads, no accounts, no setup — open and play.
 
 ## Users
 Casual gamers — two people sharing one screen who want a quick, frictionless game together.
