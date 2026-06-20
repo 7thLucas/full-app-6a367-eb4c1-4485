@@ -1,0 +1,54 @@
+<style>
+.mode-landscape .sl-layout { flex-direction: row; gap: 2rem; }
+.mode-portrait .sl-layout { flex-direction: column; gap: 1.5rem; }
+.mode-landscape .sl-col { width: 50%; }
+.mode-portrait .sl-col { width: 100%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="flex flex-col h-full p-12">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <span class="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3" style="background:#dbeafe;color:#1e40af;">Foundation</span>
+      <h2 class="font-black text-slate-900" style="font-family:'Poppins',sans-serif;font-size:2rem;">Masalah &amp; Solusi</h2>
+    </div>
+
+    <!-- Split -->
+    <div class="sl-layout flex flex-1 gap-6">
+
+      <!-- Problem -->
+      <div class="sl-col flex flex-col rounded-2xl p-8" style="background:#fef2f2;border:1.5px solid #fecaca;">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm" style="background:#ef4444;">✗</span>
+          <span class="font-bold text-slate-700 text-sm tracking-wide uppercase">Masalah</span>
+        </div>
+        <p class="text-slate-800 text-base leading-relaxed mb-4">
+          Tidak ada cara instan bagi dua orang untuk bermain game klasik bersama di satu layar.
+        </p>
+        <ul class="space-y-3 mt-auto">
+          <li class="flex items-start gap-2 text-sm text-slate-600"><span class="mt-1 text-red-400">●</span>Kebanyakan versi digital butuh download atau akun</li>
+          <li class="flex items-start gap-2 text-sm text-slate-600"><span class="mt-1 text-red-400">●</span>Banyak yang hanya punya mode single-player vs AI</li>
+          <li class="flex items-start gap-2 text-sm text-slate-600"><span class="mt-1 text-red-400">●</span>Setup yang ribet menghalangi sesi game spontan</li>
+        </ul>
+      </div>
+
+      <!-- Solution -->
+      <div class="sl-col flex flex-col rounded-2xl p-8" style="background:#eff6ff;border:1.5px solid #bfdbfe;">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm" style="background:#2563eb;">✓</span>
+          <span class="font-bold text-slate-700 text-sm tracking-wide uppercase">Solusi</span>
+        </div>
+        <p class="text-slate-800 text-base leading-relaxed mb-4">
+          Tic Tac Toe — buka URL, langsung main. Nol friction, nol instalasi.
+        </p>
+        <ul class="space-y-3 mt-auto">
+          <li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1 text-blue-500">●</span>Papan 3×3 interaktif, langsung siap di browser</li>
+          <li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1 text-blue-500">●</span>Dua pemain bergantian — X dan O — di satu perangkat</li>
+          <li class="flex items-start gap-2 text-sm text-slate-700"><span class="mt-1 text-blue-500">●</span>Deteksi menang &amp; seri otomatis, skor tersimpan per sesi</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
