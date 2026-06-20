@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 ## Product
-Simple browser-based 5×5 Tic Tac Toe game for two players on one device. No downloads, no accounts, no setup — open and play.
+Simple browser-based 2×2 Tic Tac Toe game for two players on one device. No downloads, no accounts, no setup — open and play.
 
 ## Users
 Casual gamers — two people sharing one screen who want a quick, frictionless game together.
@@ -13,7 +13,7 @@ No instant option for two people to play a classic game on one shared screen. Mo
 Tic Tac Toe delivers a zero-friction, browser-based 2-player game. Open URL → play immediately.
 
 ## Core Features
-- **5×5 interactive board** — tap any cell to place a mark; get 5 in a row to win
+- **2×2 interactive board** — tap any cell to place a mark; get 5 in a row to win
 - **Two-player alternating turns** — X goes first, then O
 - **Automatic win detection** — rows, columns, diagonals; winning cells highlighted in amber
 - **Draw detection** — auto-detected when all cells filled with no winner
