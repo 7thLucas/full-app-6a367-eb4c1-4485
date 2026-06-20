@@ -64,43 +64,48 @@ export type TDefaultConfigurableData = {
   logoUrl: string;
   brandColor: TBrandColor;
   font: TFont;
-  // Mirror new schema fields here. Example:
-  //   maxItemsPerPage?: number;
-  //   enableNotifications?: boolean;
-  //   featuredCategories?: string[];
+  // Game fields
+  gameTitle: string;
+  gameSubtitle?: string;
+  playerXLabel: string;
+  playerOLabel: string;
+  playerXColor: string;
+  playerOColor: string;
+  winHighlightColor: string;
+  resetButtonLabel: string;
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "My App",
+  appName: "Tic Tac Toe",
   logoUrl: "",
   brandColor: {
     // Base
     background:        "#ffffff",
-    foreground:        "#09090b",
+    foreground:        "#1f2937",
     // Card
-    card:              "#ffffff",
-    cardForeground:    "#09090b",
+    card:              "#f9fafb",
+    cardForeground:    "#1f2937",
     // Popover
     popover:           "#ffffff",
-    popoverForeground: "#09090b",
+    popoverForeground: "#1f2937",
     // Primary
     primary:           "#2563eb",
     primaryForeground: "#ffffff",
     // Secondary
-    secondary:           "#f4f4f5",
-    secondaryForeground: "#18181b",
+    secondary:           "#ef4444",
+    secondaryForeground: "#ffffff",
     // Muted
-    muted:           "#f4f4f5",
-    mutedForeground: "#71717a",
+    muted:           "#f3f4f6",
+    mutedForeground: "#6b7280",
     // Accent
-    accent:           "#f4f4f5",
-    accentForeground: "#18181b",
+    accent:           "#dbeafe",
+    accentForeground: "#1e40af",
     // Destructive
     destructive:           "#ef4444",
-    destructiveForeground: "#fafafa",
+    destructiveForeground: "#ffffff",
     // Border / Input / Ring
-    border: "#e4e4e7",
-    input:  "#e4e4e7",
+    border: "#e5e7eb",
+    input:  "#e5e7eb",
     ring:   "#2563eb",
     // Charts
     chart1: "#f97316",
@@ -109,22 +114,28 @@ export const defaultConfigurablesData: TDefaultConfigurableData = {
     chart4: "#d4a017",
     chart5: "#ea580c",
     // Navbar
-    navbarBackground: "#ffffff",
+    navbarBackground: "#1f2937",
     // Sidebar
-    sidebarBackground:        "#fafafa",
-    sidebarForeground:        "#3f3f46",
+    sidebarBackground:        "#111827",
+    sidebarForeground:        "#f9fafb",
     sidebarPrimary:           "#2563eb",
     sidebarPrimaryForeground: "#ffffff",
-    sidebarAccent:            "#f4f4f5",
-    sidebarAccentForeground:  "#18181b",
-    sidebarBorder:            "#e4e4e7",
+    sidebarAccent:            "#1e40af",
+    sidebarAccentForeground:  "#dbeafe",
+    sidebarBorder:            "#374151",
     sidebarRing:              "#2563eb",
   },
   font: {
-    headingFont: "Plus Jakarta Sans",
+    headingFont: "Poppins",
     textFont: "Inter",
   },
-  // ─────────────────────────────────────────────────────────────────────
-  // Add new field defaults here. See RULES.md §5 for per-type shape.
-  // ─────────────────────────────────────────────────────────────────────
+  // Game defaults
+  gameTitle: "Tic Tac Toe",
+  gameSubtitle: "Game sederhana untuk dua pemain",
+  playerXLabel: "Player X",
+  playerOLabel: "Player O",
+  playerXColor: "#2563eb",
+  playerOColor: "#ef4444",
+  winHighlightColor: "#fbbf24",
+  resetButtonLabel: "New Game",
 };
