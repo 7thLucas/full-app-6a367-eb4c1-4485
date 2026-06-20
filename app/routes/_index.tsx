@@ -9,29 +9,23 @@ type Board = Cell[];
 
 // ─── Win detection ────────────────────────────────────────────────────────────
 
-// 5×5 board — win = 5 in a row (row / col / diagonal)
+// 2×2 board — win = 2 in a row (row / col / diagonal)
 const WIN_LINES = [
   // rows
-  [0, 1, 2, 3, 4],
-  [5, 6, 7, 8, 9],
-  [10, 11, 12, 13, 14],
-  [15, 16, 17, 18, 19],
-  [20, 21, 22, 23, 24],
+  [0, 1],
+  [2, 3],
   // cols
-  [0, 5, 10, 15, 20],
-  [1, 6, 11, 16, 21],
-  [2, 7, 12, 17, 22],
-  [3, 8, 13, 18, 23],
-  [4, 9, 14, 19, 24],
+  [0, 2],
+  [1, 3],
   // diagonals
-  [0, 6, 12, 18, 24],
-  [4, 8, 12, 16, 20],
+  [0, 3],
+  [1, 2],
 ] as const;
 
 function checkWinner(board: Board): { winner: Player; line: number[] } | null {
-  for (const [a, b, c, d, e] of WIN_LINES) {
-    if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d] && board[a] === board[e]) {
-      return { winner: board[a] as Player, line: [a, b, c, d, e] };
+  for (const [a, b] of WIN_LINES) {
+    if (board[a] && board[a] === board[b]) {
+      return { winner: board[a] as Player, line: [a, b] };
     }
   }
   return null;
@@ -83,7 +77,7 @@ function GameCell({
       className={[
         "relative flex items-center justify-center",
         "w-full aspect-square rounded-2xl border-2",
-        "text-2xl sm:text-3xl font-bold",
+        "text-5xl sm:text-6xl font-bold",
         "transition-all duration-200 select-none",
         !value && !disabled
           ? "cursor-pointer hover:bg-gray-100 active:scale-95"
@@ -215,7 +209,7 @@ function ScorePill({
 export default function IndexPage() {
   const { config, loading } = useConfigurables();
 
-  const [board, setBoard] = useState<Board>(Array(25).fill(null));
+  const [board, setBoard] = useState<Board>(Array(4).fill(null));
   const [current, setCurrent] = useState<Player>("X");
   const [scores, setScores] = useState<Scores>({ X: 0, O: 0, draw: 0 });
 
@@ -245,7 +239,7 @@ export default function IndexPage() {
   );
 
   const resetGame = useCallback(() => {
-    setBoard(Array(25).fill(null));
+    setBoard(Array(4).fill(null));
     setCurrent("X");
   }, []);
 
@@ -313,8 +307,8 @@ export default function IndexPage() {
 
       {/* Board */}
       <div
-        className="grid gap-2 w-full"
-        style={{ maxWidth: "min(95vw, 520px)", gridTemplateColumns: "repeat(5, 1fr)" }}
+        className="grid gap-3 w-full"
+        style={{ maxWidth: "min(90vw, 240px)", gridTemplateColumns: "repeat(2, 1fr)" }}
       >
         {board.map((cell, idx) => (
           <GameCell
