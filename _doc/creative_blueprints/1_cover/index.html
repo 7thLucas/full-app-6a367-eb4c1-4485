@@ -1,0 +1,39 @@
+<style>
+.mode-landscape .sl-layout { flex-direction: row; }
+.mode-portrait .sl-layout { flex-direction: column; }
+.mode-landscape .sl-content { width: 55%; }
+.mode-portrait .sl-content { width: 100%; flex: 1; }
+.mode-landscape .sl-visual { width: 45%; }
+.mode-portrait .sl-visual { width: 100%; height: 40%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: content -->
+    <div class="sl-content flex flex-col justify-between p-12">
+      <div>
+        <span class="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-8" style="background:#dbeafe;color:#1e40af;">Casual Game</span>
+        <h1 class="font-black text-slate-900 leading-none mb-5" style="font-family:'Poppins',sans-serif;font-size:3.5rem;">Tic Tac<br>Toe</h1>
+        <p class="text-lg text-slate-500 leading-relaxed mb-8">Dua pemain. Satu papan.<br>Tanpa instalasi.</p>
+        <div class="flex gap-3 flex-wrap">
+          <span class="px-4 py-2 rounded-lg text-white text-sm font-bold" style="background:#2563eb;">✕ Pemain X</span>
+          <span class="px-4 py-2 rounded-lg text-white text-sm font-bold" style="background:#ef4444;">○ Pemain O</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <data-attribution />
+      </div>
+    </div>
+
+    <!-- Right: visual -->
+    <div class="sl-visual flex items-center justify-center p-8" style="background:#f8fafc;">
+      <img
+        src="https://api-stag.qb-deck.quantumbyte.ai/common/image-generation?prompt=tic+tac+toe+3x3+board+blue+X+red+O+clean+minimal+flat+design+white+background+bold+grid+lines"
+        alt="Tic Tac Toe board"
+        class="w-full h-full object-contain rounded-2xl"
+      />
+    </div>
+
+  </div>
+</section>
